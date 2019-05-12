@@ -1,0 +1,16 @@
+# BEGIN custom php.ini PHP54
+<IfModule mod_suphp.c>
+    suPHP_ConfigPath /home3/lennybeadle/rpsbet.com
+</IfModule>
+# END custom php.ini
+
+RewriteEngine on
+ 
+RewriteCond $1 !^(index\.php|(.*)\.swf|forums|images|css|downloads|jquery|js|robots\.txt|favicon\.ico)
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ ./index.php?$1 [L,QSA]
+RewriteEngine On
+RewriteCond %{HTTP_HOST} rpsbet\.com [NC]
+RewriteCond %{SERVER_PORT} 80
+RewriteRule ^(.*)$ https://rpsbet.com/$1 [R,L]

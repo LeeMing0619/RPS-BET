@@ -13,7 +13,7 @@
                     
                     <form id="frm_reset" role="form" action="<?php echo base_url() ?>auth/resetProcess" method="POST">
                         <div class="form-group">
-                          <label for="">Please your email address:</label>
+                          <label for="">Please enter your Email Address:</label>
                           <label class="text-success"><b><?php echo $email?></b></label>
                           <hr/>
                           <label>Email ID</label>
@@ -21,7 +21,7 @@
                         </div>
                         <button class="btn btn-info btn-block">reset password</button>
                       </form>
-                    <a href="<?php echo base_url()?>auth" class="btn btn-block">login</a>                    
+                    <a href="<?php echo base_url()?>auth" style="background-color: #c83228 !important; color: #fff !important;" class="btn btn-block">login</a>                    
                 </div>
             </div>
         </div>

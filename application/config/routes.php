@@ -45,25 +45,32 @@ $route['register'] = 'admin/memberIndex';
 $route['schema'] = 'admin/schema';
 $route['plan'] = 'admin/plan';
 $route['payment'] = 'admin/payment';
+$route['paycancel'] = 'admin/paycancel';
+$route['notify'] = 'admin/notify';
 $route['joinPayment'] = 'admin/joinPay';
+$route['confirmWin'] = 'admin/confirmWin';
 $route['memberList'] = 'admin/memberList';
+$route['topList'] = 'admin/topList';
 $route['showLog'] = 'admin/showLogList';
+$route['joinSpleeshGame'] = 'admin/joinspleeshgame';
 $route['joingame'] = 'admin/joinGame';
 $route['memberdelete/:num'] = 'admin/memberDelete';
 $route['memberdelcf/:num'] = 'admin/memberdelcf';
 $route['scissors'] = 'admin/selectScissor';
+$route['braingame'] = 'admin/braingame';
+$route['spleesh'] = 'admin/spleesh';
 $route['alert'] = 'admin/alert';
 $route['subadmin'] = 'admin/subAdmin';
 $route['backup'] = 'admin/backup';
 $route['tariff'] = 'admin/tariff';
 $route['signUp'] = 'auth/signup';
 $route['resetPassword'] = 'auth/resetPassword';
+$route['changeProfile'] = 'auth/changeProfile';
 $route['changePwd'] = 'auth/changePwd';
 $route['changeEmail'] = 'auth/changeEmail';
 $route['withdrawproc'] = 'auth/withdrawproc';
-
-
-
+$route['privacy_policy'] = 'auth/privacy_policy';
+$route['terms_conditions'] = 'auth/terms_conditions';
 
 /* End of file routes.php */
 /* Location: ./application/config/routes.php */

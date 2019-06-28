@@ -17,8 +17,8 @@
                     </div>
                     <form id="frm_login" role="form" action="<?php echo base_url() ?>auth/login" method="POST">
                         <div class="form-group">
-                          <label for="">User Name</label>
-                          <input type="text" class="form-control" name="username" id="username" value="<?php if(isset($_COOKIE["member_login"])) { echo $_COOKIE["member_login"]; } ?>" placeholder="User Name">
+                          <label for="">Username</label>
+                          <input type="text" class="form-control" name="username" id="username" value="<?php if(isset($_COOKIE["member_login"])) { echo $_COOKIE["member_login"]; } ?>" placeholder="Username">
                         </div>
                         <div class="form-group">
                           <label for="">Password</label>
@@ -28,9 +28,10 @@
                         <input type="submit" class="btn btn-info btn-block" value="Login">
                       
                     <a href="<?php echo base_url()?>signUp" class="btn btn-block" id="signup">Sign Up</a> 
-                    <div>
-                        <input type="checkbox" name="keep" id="keep"/><label class="keep">Keep me Signed in</label>
-                        <a href="<?php echo base_url()?>resetPassword" class="" id="resetpwd">+Reset password</a>
+                    <div class="keep">
+                        <h4>Stay Logged In</h4>
+                        <input type="checkbox" name="keep" id="keep"/><label class="keep" for="keep"></label>
+                        <a href="<?php echo base_url()?>resetPassword" class="" id="resetpwd">Forgot your Password?</a>
                     </div>
                     </form>
                 </div>
@@ -38,7 +39,7 @@
             </div>
         </div>
 
-<div class="container-fluid navbar-fixed-bottom text-center text-info" style="color: #fff;">Copyright © 2019 RPS Bet, rpsbet.com&nbsp;&nbsp;<a style="font-size: 12px; color: #fff;" href="https://rpsbet.com/privacy-policy/">Privacy</a> | <a style="font-size: 12px; color: #fff;" href="https://rpsbet.com/terms-conditions/">Terms</a></div>
+<div class="container-fluid navbar-fixed-bottom text-center text-info" style="color: #fff;">Copyright © 2019 RPS Bet, rpsbet.com&nbsp;&nbsp;<a style="font-size: 12px; color: #fff;" href="https://rpsbet.com/privacy_policy/">Privacy</a> | <a style="font-size: 12px; color: #fff;" href="https://rpsbet.com/terms_conditions/">Terms</a></div>
         <script>
         $(document).ready(function (){
             document.cookie = "login = false";
@@ -64,7 +65,7 @@
                     else if(data =='true')
                     {
                     document.cookie = "login = true";
-                    window.location.href='<?php echo base_url() ?>memberList/';
+                    window.location.href='<?php echo base_url() ?>topList/';
                     throw new Error('go');
                     } 
                 });

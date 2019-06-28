@@ -7,11 +7,11 @@
 <script src="<?php echo base_url() ?>asset/lib/js/bootstrap.min.js"></script>
 <link rel="stylesheet" href="<?php echo base_url() ?>asset/lib/alertify/alertify.min.js"/>
 <script>
-    
-        if(getCookie("remember_me") == 'false'){
+    /*
+        if(getCookie("user_email") == ''){
             window.location.href = window.location.protocol + "//" + window.location.host + "/auth";
         }
-    
+    */
 </script>
     </body>
 </html>

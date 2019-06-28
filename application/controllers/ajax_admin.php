@@ -3,9 +3,9 @@
 class Ajax_admin extends CI_Controller {
     public function __construct() {
         parent::__construct();
-        $this->load->model('Admin_model');
+        $this->load->model('Auth_model');
     }
-
+/*
 public function autoloadPeriod() {
         $id= $this->input->get_post('id');
         
@@ -26,17 +26,20 @@ public function loadPeriod() {
             echo '<option value='.$row->id.'>'.$row->duration.'</option>';
         }
         exit;
-}
-    public function loadnotes(){
+}*/
+    public function isChangedBalance(){
         
+        $val= $this->input->get_post('val');
         $id= $this->input->get_post('id');
         
-        $query = $this->Admin_model->loadnotes($id);
-        
-        foreach ($query->result() as $row){
-            echo'<p class="alert alert-info">'.$row->notes.'</p>';
+        $query = $this->Auth_model->isChangedBalance($id, $val);
+        if ($query > 0) {
+            echo 'same';
+        } else {
+            $res = $this->Auth_model->getBalanceByEmail($id);
+            $this->session->set_userdata('balance', $res);
+            echo $res;
         }
-        exit;
     }
     
     

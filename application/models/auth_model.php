@@ -51,14 +51,24 @@ class Auth_model extends CI_Model {
         $this->db->where('email', $param1);
         $this->db->update('auth', $balance);
     }
-
+    
+    public function isExistsEmailAndName($email, $name) {
+       $query = $this->db->query("SELECT * FROM auth WHERE email='$email' or uname='$name'");    
+        if($row = $query->row()){
+            return TRUE;
+        }else{
+            return FALSE;
+        } 
+    }
 
     /*
         param 1 : user name
         param 2 : email
         param 3 : password
+        param 4 : photo name
+        param 5 : bio
     */
-    public function sendSignUp($param1, $param2, $param3) {
+    public function sendSignUp($param1, $param2, $param3, $param4, $param5) {
         $username = $param1;
         $email = $param2;
         $password = md5($param3);
@@ -69,11 +79,22 @@ class Auth_model extends CI_Model {
         if ($query->num_rows() > 0) {
             return false;
         } else {
-            $res = $this->db->insert("auth", array('uname'=>$username, 'email'=>$email, 'password'=>$password, 'status'=>1));      
+            $res = $this->db->insert("auth", array('uname'=>$username, 'email'=>$email, 'password'=>$password, 'status'=>1, 'bio'=>$param5, 'photo'=>$param4));      
 
             if ($res == 1) return true; 
             else return false;
         }
+    }
+    
+    public function changeProfile($email, $photo, $bio) {
+        $data = array('photo' => $photo, 'bio'=>$bio);
+    
+        $this->db->where('email', $email);
+        $this->db->update('auth', $data);
+        if ($this->db->affected_rows() > 0)
+            return TRUE;
+        else
+            return FALSE;
     }
     
     public function isEmailExists($email) {
@@ -98,14 +119,28 @@ class Auth_model extends CI_Model {
     }
     
     public function updateEmail($param, $pass) {
-        $sql = "Update auth SET email='$pass' WHERE email ='$param'";
-        $this->db->query($sql);
-        if($this->db->affected_rows() > 0){
-            return TRUE;
-        }else{
-            return FALSE;
-        }
+        $query = "select * from auth where email='$pass'";
+        $res = $this->db->query($query);
         
+        if ($res->num_rows() > 0) {
+            return 'fail';
+        } else {
+            $sql = "Update auth SET email='$pass' WHERE email ='$param'";
+            $this->db->query($sql);
+            
+            return $pass;  
+        }
+    }
+    
+    public function resetBalance($email, $amount) {
+        $balance = $this->getUserBalance($email);
+        
+        $balance -= $amount;
+        $sql = "Update auth SET balance='$balance' WHERE email ='$email'";
+        $this->db->query($sql);
+        
+        $this->session->set_userdata('balance', $balance);
+        return $balance;
     }
 
     public function getUserNameByEmail($email) {
@@ -120,6 +155,34 @@ class Auth_model extends CI_Model {
         }
 
         return $username;
+    }
+    
+    public function getBioByEmail($email) {
+        $this->db->where('email', $email);
+        $res = $this->db->get('auth');
+        $res = $res->result();
+
+        $userbio = '';
+        foreach ($res as $row) {
+            # code...
+            $userbio = $row->bio;
+        }
+
+        return $userbio;
+    }
+    
+    public function getPhotoByEmail($email) {
+        $this->db->where('email', $email);
+        $res = $this->db->get('auth');
+        $res = $res->result();
+
+        $userphoto = '';
+        foreach ($res as $row) {
+            # code...
+            $userphoto = $row->photo;
+        }
+
+        return $userphoto;
     }
     
     public function getEmailByUserName($name) {
@@ -137,18 +200,33 @@ class Auth_model extends CI_Model {
     }
     
     public function isLoggedIn() {
-        header("cache-Control: no-store, no-cache, must-revalidate");
-        header("cache-Control: post-check=0, pre-check=0", false);
-        header("Pragma: no-cache");
-        header("Expires: Sat, 26 Jul 1997 05:00:00 GMT");
-        $is_logged_in = $this->session->userdata('logged_in');
-
-        if (!isset($is_logged_in) || $is_logged_in !== TRUE) {
+        if (!isset($this->session->userdata['user_email'])) {
             redirect('/auth');
             exit;
         }
     }
 
+    public function isChangedBalance($email, $val) {
+        $query = "select * from auth where email='$email' and balance='$val'";
+        $res = $this->db->query($query);
+        
+        return $res->num_rows();
+    }
+    
+    public function getBalanceByEmail($email) {
+        $this->db->where('email', $email);
+        $res = $this->db->get('auth');
+        $res = $res->result();
+
+        $balance = '';
+        foreach ($res as $row) {
+            # code...
+            $balance = $row->balance;
+        }
+
+        return $balance;
+    }
+    
 //    public function sendMail() {
 //        $mail = new PHPMailer();
 //        $body = '<div style="width: 400px; border: 2px solid #ddd; padding: 10px;">

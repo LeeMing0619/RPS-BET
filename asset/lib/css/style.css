@@ -4,6 +4,114 @@ font-family: "Prototype";
 src:
 url("system/fonts/prototype-webfont.woff") format("woff");
 }
+.col-md-6 { width: 100%; }
+
+font {    display: block;
+    font-size: 35px;
+    text-align: center;
+    font-weight: 800; }
+
+.selectRockDiv { margin: 20px 0; }
+
+p.prevguess {
+  background: #BF3827cc;
+    padding: 10px;
+    color: #fff;
+    text-align: center;
+    font-size: 42px;
+}
+
+#spleeshTable td {
+font-size: 30px;
+    white-space: nowrap;
+    border: 1px solid #ffffff55;
+    background: #22140ccc;
+    color: #fff;
+}
+
+#spleeshTable1 td {
+font-size: 30px;
+    white-space: nowrap;
+    border: 1px solid #ffffff55;
+    background: #22140ccc;
+    color: #fff;
+}
+
+#spleeshTable2 td {
+font-size: 30px;
+    white-space: nowrap;
+    border: 1px solid #ffffff55;
+    background: #22140ccc;
+    color: #fff;
+}
+
+#spleeshTable3 td {
+font-size: 30px;
+    white-space: nowrap;
+    border: 1px solid #ffffff55;
+    background: #22140ccc;
+    color: #fff;
+}
+
+#mysteryTable td {
+font-size: 30px;
+    white-space: nowrap;
+    border: 1px solid #ffffff55;
+    background: #BF3827cc;
+    color: #fff;
+}
+
+hr { margin: 10px !important; }
+form#paymentFrm hr { border-color: #c73128; }
+#loaderkender .btn-info { background-color: #c73128 !important; border-color: #c73128 !important; border-radius: 0 !important; }
+a#resetpwd { color: #fff; font-size: 14px; float: right; margin-top: -29px; }
+
+input[type=checkbox] { visibility: hidden; }
+div.keep { position: relative; }
+
+div.keep label { cursor: pointer;
+    position: absolute;
+    width: 25px;
+    height: 17px;
+    top: 0;
+    left: 0;
+    background: #eee;
+    border:2px solid #ddd; }
+
+
+div.keep label:after {
+    opacity: 0.2;
+    content: '';
+    position: absolute;
+    width: 13px;
+    height: 7px;
+    background: transparent;
+    top: 3px;
+    left: 4px;
+    border: 5px solid #333;
+    border-top: none;
+    border-right: none;
+
+    transform: rotate(-45deg);
+}
+
+/**
+ * Create the hover event of the tick
+ */
+.keep label:hover::after {
+    opacity: 0.2;
+}
+
+/**
+ * Create the checkbox state for the tick
+ */
+.keep input[type=checkbox]:checked + label:after {
+    opacity: 1;
+}
+
+.keep h4 { margin: 10px 30px !important; font-size: 14px !important; }
+
+#account-modal td { text-align: left; padding: 5px; }
 
 .cc-selector input { position: absolute; opacity: 0; width: 0; height: 0; display: none;}
 
@@ -48,7 +156,7 @@ h1, h3.red-title {
 
 .modal-header .close { background: none !important; }
 
-button[type="submit"],button[type="button"]  {
+button[type="submit"],button[type="button"] {
     background: #33271f !important;
     border: none;
     color: #f9f9f9;
@@ -56,7 +164,33 @@ button[type="submit"],button[type="button"]  {
     padding: 2.5px 10.5px;
 }
 
-#helpModal h4, #helpModal li, #helpModal p { color: #fff; }
+.btn-default[href="https://rpsbet.com/register"], .btn-default[href="https://rpsbet.com/showLog"] {
+  font-weight: 800;
+  }
+
+.btn-default[href="https://rpsbet.com/register"] {
+  background-color: #21130aee !important;
+  color: #fff !important;
+}
+
+.btn-default[href="https://rpsbet.com/register"]:hover, .btn-default[href="https://rpsbet.com/register"]:focus {
+    background-color: #21130a !important;
+  }
+
+
+
+a[href="https://rpsbet.com/register"]:hover, .btn-default[href="https://rpsbet.com/showLog"]:hover {
+  color: #c73128 !important; transition: 0.4s;
+}
+
+#helpModal .modal-body { height: 400px; overflow-y: scroll;  }
+
+#helpModal table td, #helpModal table th {
+	border: 1px solid #fff;
+	padding: 5px 15px;
+}
+
+#helpModal h4, #helpModal h5, #helpModal li, #helpModal p, #helpModal th, #helpModal td { color: #fff; }
 
 thead {
     background: #c73128;
@@ -117,13 +251,8 @@ thead th, table td { text-align: center; }
 .breadcrumb { background: none; }
 .breadcrumb .btn-sm { padding: 0; }
 
-.breadcrumb .btn-info { background-color: #f5b22d; border: 3px double #c73128; border-radius: 200px; padding: 5px; }
+.breadcrumb .btn-info { background-color: #fff; border: 3px solid #c73128; border-radius: 200px; padding: 5px; }
 
-.btn-default[href="https://rpsbet.com/register"] {
-    background-color: #ffffff99;
-    font-weight: 800;
-    border: none;
-}
 button[data-dismiss="modal"] {
   color: #ffffff !important;
 }
@@ -131,11 +260,7 @@ button[data-dismiss="modal"] {
 .hover:hover { background-color: #fff !important; border: none !important; transform: scale(1.05); transition: 0.3s }
 button:hover { transform: scale(1.05) !important; transition: 0.3s; }
 
-a[href="https://rpsbet.com/register"]:visited {
-    color: #c73128;
-}
-
-.user_icon { height: 50px; opacity: 0.8;}
+.user_icon { height: 50px; opacity: 0.8; }
 .user_icon:hover { opacity: 1; transition: 0.2s; }
 
 .pull-right::before { display: none; }
@@ -156,11 +281,6 @@ a[href="https://rpsbet.com/auth"],
   background: snow !important;
 }
 
-a[href="https://rpsbet.com/resetPassword"],
-#resetpwd {
-    color: #fff !important;
-    float: right;
-}
 
 .form-group input { margin-bottom: 15px; }
 .form-control { border-radius: 0px; border: unset; color: #22140C;}
@@ -292,7 +412,7 @@ width: 20%;
 }
 .hover:hover{
     background-color: #f3565d;
-    color: #fff;
+
     transition: all ease-in-out 0.2s;
     border: 2px solid #ddd;
     border-radius: 4px;
@@ -365,18 +485,186 @@ padding: 0;
             filter: brightness(1.2) grayscale(.5) opacity(.9);
 }
 
+#helpModal .gamemode, #helpModal th, #helpModal h4  { background: #33271f;
+    border: none !important; font-family: 'Prototype'; }
+
+#helpModal table { border-collapse: separate;
+  border-spacing: 20px 0; }
+#helpModal span, #helpModal .gamemode { color: #C83228; }
+#helpModal h4, #helpModal th {
+    color: #ebddca;
+    border-bottom: 5px solid #fff !important;
+    padding: 20px;
+    margin: 20px 0;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    text-align: center;
+    white-space: nowrap;
+}
+  .modal.in .modal-dialog { width: 800px; }
+.scroll-txt { display: none; }
+#helpModal table { display: table; }
+
+.radio-inline {
+    display: inline-block; margin: 5px !important; padding: 5px !important;
+    border: 2px solid #C83228 !important;
+    color: #C83228;
+    background: #ffffff99;
+    font-weight: 800;
+  }
+
+  label.radio-inline.password { border: none !important; }
+
+  .checked, label.radio-inline.password {
+    color: #fff !important;
+    background: #C83228 !important;
+  }
+
+  input[name="password"] { color: #C83228 !important; padding-left: 10px; position: relative !important; opacity: 1 !important; }
+  input[value="Play"] { padding: 30px 15px; font-size: 44px; margin: 20px 0 !important; border: none; }
+  .btn-success { background-color: #33271f !important; }
+
+  .radio-inline input{ position: absolute;
+  opacity: 0;
+  cursor: pointer;}
+
+  .radio-inline+.radio-inline { margin-left: 0; }
+
+  a[href="https://www.rpsbet.com/register"] { margin-top: 10px !important; }
+
 @media (max-width: 992px) {
+  .joinBrainGame { background: #ffffff99;
+    font-size: 33px;
+    margin: 30px 0;
+    border-top: 5px solid #C83228 !important;
+    text-align: center;
+    border-bottom: 5px solid #C83228 !important;
+    font-weight: 800; }
+
+.joinBrainGame label { font-size: 44px !important; }
+
+  font.countdown, font#score { font-size: 75px !important; }
+  p.question { font-size: 40px !important; }
+.answer_div label.radio-inline[style] { position: relative !important; width: 100% !important; display: block !important; }
+
+	.class_balance { background: transparent !important;
+    border: none !important;
+    color: #33271f !important;
+    padding: 0 5px !important;
+    font-size: 55px !important; }
+#account-modal td { display: block; text-align: center; }
+#account-modal tr { margin: 10px 0; }
+#account-modal label {
+	margin-top: 20px;
+	margin-bottom: 0 !important;
+    background: #33271f;
+    font-weight: 800;
+    border: #bf3827 solid 3px;
+    color: #fff;
+    padding: 10px;
+    border-top-right-radius: 20px;
+    border-top-left-radius: 20px;
+}
+#frm_withdraw .modal-body { height: 980px; overflow-y: scroll; }
+
+	#helpModal table { display: block; width: 100% !important; overflow-x: scroll; }
+#helpModal .modal-body { height: 1100px; }
+.fullheader[style] { height: 120px !important; }
+.fullheader img.logo[style] { height: 100px !important; }
+h5 {    font-size: 30px;
+    padding: 20px 0px 10px;
+}
+
+a#resetpwd { font-size: 44px; margin-top: -64px; }
+
+button[type="button"].signup-btn  {
+    padding: 30px 35px !important;
+}
+
+.scroll-txt { text-align: center; padding-top: 20px; display: block !important; }
+
+.row.document {
+	padding: 30px 30px;
+    margin: 30px;
+    background: #fff;
+}
+
+ul, ol { font-size: 30px; }
+
+.navbar-fixed-bottom, .navbar-fixed-bottom a[style] { font-size: 30px !important; }
+h1 { font-size: 60px; }
+h3 {
+	font-size: 44px;
+    font-weight: 800;
+}
+p { font-size: 30px; }
+
+h4 { font-size: 36px; }
+
+button[onclick="javascript:send();"] { width: 100% !important; }
+
+	.user_icon { height: 150px; opacity: 1; }
+	.hover:hover { transform: unset; transition: 0.3s }
+	a[href="https://www.rpsbet.com/register"] { background-color: #22140ccc !important; color: #fff; width: 60%; }
+	a[href="https://www.rpsbet.com/register"]:hover { background-color: #22140c !important; color: #C83228 !important; }
+	.btn-default { font-size: 44px; margin: 10px 0; font-weight: 800; padding: 20px; width: 40%; float: left; }
+	button[data-dismiss="modal"] { margin-top: 0;  }
+
+	input[type=checkbox] { visibility: hidden; }
+	div.keep { position: relative; }
+
+div.keep label { cursor: pointer;
+    position: absolute;
+    width: 52px;
+    height: 48px;
+    top: 0;
+    left: 0;
+    background: #eee;
+    border:2px solid #ddd; }
+
+
+div.keep label:after {
+    opacity: 0.2;
+    content: '';
+    position: absolute;
+    width: 35px;
+    height: 20px;
+    background: transparent;
+    top: 6px;
+    left: 7px;
+    border: 7px solid #333;
+    border-top: none;
+    border-right: none;
+
+    transform: rotate(-45deg);
+}
+
+/**
+ * Create the hover event of the tick
+ */
+.keep label:hover::after {
+    opacity: 0.2;
+}
+
+/**
+ * Create the checkbox state for the tick
+ */
+.keep input[type=checkbox]:checked + label:after {
+    opacity: 1;
+}
+
+.keep h4 { margin-left: 70px !important; font-size: 44px !important; }
+
+  #open_room button { width: 110px !important; font-size: 30px; }
+  .nav-tabs>li>a { font-size: 44px !important; padding: 30px; font-weight: 800; }
+
+  .tab-content { overflow-x: scroll; }
+
   legend { font-size: 55px; }
 
-  input[type="submit"], a[href="https://rpsbet.com/signUp"], a[href="https://rpsbet.com/resetPassword"] { padding: 30px 15px; font-size: 44px; margin: 20px 0 !important; }
-  input[type="checkbox"] {
-      zoom: 3 !important;
-  }
+  .btn-block { padding: 30px 15px; font-size: 44px; margin: 20px 0 !important; }
 
-  .keep {
-      font-size: 32px !important;
-  }
-  form#frm_login .form-control {
+  .form-control {
     height: 100px;
     padding: 15px 30px;
     font-size: 44px;
@@ -404,34 +692,18 @@ padding: 0;
 
   form[action="https://rpsbet.com/admin/memberCreate"] button[type="submit"] { width: 100% !important; font-size: 44px; padding: 25.5px 10.5px; }
 
-  form[action="https://rpsbet.com/admin/memberCreate"] .radio-inline {
-    display: inline-block; margin: 30px !important; padding: 20px !important;
+  .radio-inline {
+    display: inline-block; margin: 30px 20px !important; padding: 20px !important;
     border: 5px solid #C83228 !important;
-    color: #C83228;
-    background: #ffffff99;
-    font-weight: 800;
-  }
+}
 
-  label.radio-inline.password { border: none !important; }
+.start_braingame { text-align: center; padding: 10px 0; }
 
-  .checked, label.radio-inline.password {
-    color: #fff !important;
-    background: #C83228 !important;
-  }
-
-  input[name="password"] { color: #C83228 !important; padding-left: 10px; }
-
-  input[name="privated"] { position: absolute;
-  opacity: 0;
-  cursor: pointer;}
-
-  .radio-inline+.radio-inline { margin-left: 0; }
-
-  textarea.form-control { text-align: left !important; }
+  textarea.form-control { text-align: left !important; margin-bottom: 30px !important; }
 
   label { font-size: 30px !important;}
 
-  [ng-model="search"].form-control, #betamount {
+  [ng-model="search"].form-control, .bet-amount {
     font-size: 44px;
     padding: 10px 30px;
     text-align: center;
@@ -445,24 +717,35 @@ padding: 0;
     border-radius: 0px;
     border-color: #BF3827;
 }
-
+.breadcrumb img { height: 80px; }
 .breadcrumb .btn-info {
-    background-color: #f5b22d;
-    border: 5px solid #c73128;
+	border: 6px solid #c73128;
     border-radius: 200px;
-    padding: 30px;
+    padding: 20px;
     margin-top: 10px;
+    margin-bottom: 10px;
 }
 
 a[data-target="#helpModal"] { font-size: 40px !important; }
+#submitEditModal a { background-color: transparent !important; }
 
 #lower-header[style] { height: 75px !important; }
 
 [ng-model="search"].form-control:hover { background: #fff;  }
 
-.btn-default[href="https://rpsbet.com/register"] { padding: 60px 12px; margin: 30px 0 !important; font-size: 44px; }
+.btn-default[href="https://rpsbet.com/register"], .btn-default[href="https://rpsbet.com/showLog"] {
+  padding: 30px 12px;
+  margin-top: 30px !important;
+  font-size: 44px;
+  background-color: #ffffff99;
+  border: none;
+}
 
-.btn-default[href="https://rpsbet.com/register"]:hover { background: #fff; transform: unset; }
+h3#myModalLabel { font-size: 55px !important; }
+
+.btn-default[href="https://rpsbet.com/register"], .btn-default[href="https://rpsbet.com/showLog"] {
+  transform: unset;
+  }
 
 .col-md-3#text { display: none; }
 
@@ -472,7 +755,8 @@ a[data-target="#helpModal"] { font-size: 40px !important; }
 
   .modal.in .modal-dialog { width: 90%; }
 
-  .navbar-nav li a { font-size: 28px; }
+  .navbar-nav { margin: 28.5px 0px !important }
+  .navbar-nav li a { font-size: 32px; }
 
   .modal-body { font-size: 28px; }
 
@@ -489,6 +773,23 @@ a[data-target="#helpModal"] { font-size: 40px !important; }
   .pagination>li>a, .pagination>li>span { font-size: 30px; padding: 5px 20px; }
 
   textarea[name="note"] { height: 100px !important; }
+
+  .modal-footer { padding: 15px !important; }
+
+  .modal-footer .btn {
+    width: 49% !important;
+    font-size: 30px;
+    float: left;
+    padding: 20px 0 !important;
+  }
+  .modal-footer .btn:hover { transform: scale(0.95) !important; }
+  .modal-footer .btn+.btn { margin-bottom: 5px !important; }
+}
+
+.my-bets { background: #C83228;
+    color: #fff;
+    width: 100%;
+    margin: 0 0 30px 0; }
 }
 
 

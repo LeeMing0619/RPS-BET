@@ -6,20 +6,25 @@ namespace Composer\Autoload;
 
 class ComposerStaticInit740d3f5f044f3131ffc5ffc5db6b7207
 {
-    public static $prefixesPsr0 = array (
-        'P' => 
+    public static $prefixLengthsPsr4 = array (
+        'S' => 
         array (
-            'PayPal' => 
-            array (
-                0 => __DIR__ . '/..' . '/paypal/rest-api-sdk-php/lib',
-            ),
+            'Stripe\\' => 7,
+        ),
+    );
+
+    public static $prefixDirsPsr4 = array (
+        'Stripe\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/stripe/stripe-php/lib',
         ),
     );
 
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixesPsr0 = ComposerStaticInit740d3f5f044f3131ffc5ffc5db6b7207::$prefixesPsr0;
+            $loader->prefixLengthsPsr4 = ComposerStaticInit740d3f5f044f3131ffc5ffc5db6b7207::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInit740d3f5f044f3131ffc5ffc5db6b7207::$prefixDirsPsr4;
 
         }, null, ClassLoader::class);
     }
